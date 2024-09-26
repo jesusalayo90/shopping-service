@@ -8,6 +8,7 @@ import java.util.Date;
 
 @Entity
 @Data
+@Table(name = "customer")
 public class Customer {
 
     @Getter(onMethod_ = {@Id, @GeneratedValue(strategy = GenerationType.IDENTITY), @Column(name = "customerId")})

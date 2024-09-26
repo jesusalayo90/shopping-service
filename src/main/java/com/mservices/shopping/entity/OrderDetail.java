@@ -6,14 +6,11 @@ import lombok.Getter;
 
 @Entity
 @Data
+@Table(name = "orderDetail")
 public class OrderDetail {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "orderDetailId")
+    @Getter(onMethod_ = {@Id, @GeneratedValue(strategy = GenerationType.IDENTITY), @Column(name = "orderDetailId")})
     private Integer id;
-    @Getter(onMethod_ = {@ManyToOne(fetch = FetchType.LAZY), @JoinColumn(name = "orderId", nullable = false)})
-    private Order order;
     private String productId;
     private String variationId;
     private Float quantity;
